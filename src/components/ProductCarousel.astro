@@ -1,0 +1,250 @@
+---
+// Product Carousel component
+const products = [
+  {
+    id: 'tpv1',
+    name: 'Sistema TPV Profesional',
+    image: '/images/tpv1.png',
+    description: 'Terminal punto de venta completo con software integrado, perfecto para comercios y hostelería.',
+    features: ['Pantalla táctil HD', 'Software VERIFACTU incluido', 'Conectividad múltiple', 'Cajón portamonedas integrado'],
+    category: 'TPV'
+  },
+  {
+    id: 'balanza1',
+    name: 'Balanza Comercial Básica',
+    image: '/images/balanza1.png',
+    description: 'Balanza robusta y fiable para comercios que requieren pesaje preciso y duradero.',
+    features: ['Alta precisión', 'Display LED claro', 'Estructura resistente', 'Fácil calibración'],
+    category: 'Balanzas'
+  },
+  {
+    id: 'balanza2',
+    name: 'Balanza Digital Avanzada',
+    image: '/images/balanza2.png',
+    description: 'Balanza digital con características avanzadas para comercios exigentes.',
+    features: ['Pesaje de alta precisión', 'Múltiples unidades', 'Conexión a PC', 'Batería de larga duración'],
+    category: 'Balanzas'
+  },
+  {
+    id: 'balanza3',
+    name: 'Balanza Industrial',
+    image: '/images/balanza3.png',
+    description: 'Solución industrial para grandes volúmenes y aplicaciones comerciales intensivas.',
+    features: ['Capacidad industrial', 'Certificación metrológica', 'Conectividad avanzada', 'Software especializado'],
+    category: 'Balanzas'
+  },
+  {
+    id: 'cajon1',
+    name: 'Cajón Portamonedas',
+    image: '/images/cajon1.png',
+    description: 'Cajón portamonedas seguro y duradero, compatible con todos nuestros sistemas TPV.',
+    features: ['Apertura automática', '5 compartimentos monedas', '4 compartimentos billetes', 'Cerradura de seguridad'],
+    category: 'Accesorios'
+  }
+];
+---
+
+<section id="productos" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        Nuestros Productos
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Descubre nuestra gama completa de soluciones de pesaje y TPV, todas adaptadas 
+        a la normativa VERIFACTU y diseñadas para optimizar tu negocio.
+      </p>
+    </div>
+    
+    <!-- Product Categories Filter -->
+    <div class="flex justify-center mb-12">
+      <div class="inline-flex rounded-lg border border-gray-200 p-1 bg-gray-50">
+        <button class="category-filter active px-4 py-2 text-sm font-medium rounded-md transition-colors" data-category="all">
+          Todos
+        </button>
+        <button class="category-filter px-4 py-2 text-sm font-medium rounded-md transition-colors" data-category="TPV">
+          TPV
+        </button>
+        <button class="category-filter px-4 py-2 text-sm font-medium rounded-md transition-colors" data-category="Balanzas">
+          Balanzas
+        </button>
+        <button class="category-filter px-4 py-2 text-sm font-medium rounded-md transition-colors" data-category="Accesorios">
+          Accesorios
+        </button>
+      </div>
+    </div>
+    
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+      {products.map((product) => (
+        <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-category={product.category}>
+          <div class="aspect-w-16 aspect-h-12 bg-gray-100">
+            <img 
+              src={product.image} 
+              alt={product.name}
+              class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <span class="inline-block bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full font-medium">
+                {product.category}
+              </span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">{product.name}</h3>
+            <p class="text-gray-600 mb-4 line-clamp-3">{product.description}</p>
+            
+            <div class="space-y-2 mb-6">
+              {product.features.slice(0, 2).map((feature) => (
+                <div class="flex items-center text-sm text-gray-500">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  {feature}
+                </div>
+              ))}
+            </div>
+            
+            <button 
+              class="w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 transition-colors duration-200 product-detail-btn"
+              data-product-id={product.id}
+            >
+              Ver Detalles
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Product Detail Modal -->
+<div id="product-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+  <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-6">
+        <h3 id="modal-title" class="text-2xl font-bold text-gray-900"></h3>
+        <button id="close-modal" class="text-gray-400 hover:text-gray-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <img id="modal-image" src="" alt="" class="w-full h-auto rounded-lg shadow-md">
+        </div>
+        <div>
+          <p id="modal-description" class="text-gray-600 mb-6 text-lg"></p>
+          
+          <h4 class="text-lg font-semibold text-gray-900 mb-4">Características principales:</h4>
+          <ul id="modal-features" class="space-y-2 mb-8">
+            <!-- Features will be populated dynamically -->
+          </ul>
+          
+          <div class="flex space-x-4">
+            <a href="#contacto" class="flex-1 bg-primary-600 text-white text-center py-3 px-6 rounded-md hover:bg-primary-700 transition-colors duration-200">
+              Solicitar Información
+            </a>
+            <button id="close-modal-btn" class="flex-1 border border-gray-300 text-gray-700 py-3 px-6 rounded-md hover:bg-gray-50 transition-colors duration-200">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ products }}>
+  // Category filtering
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.category-filter');
+    const productCards = document.querySelectorAll('.product-card');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.dataset.category;
+        
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-primary-600', 'text-white'));
+        this.classList.add('active', 'bg-primary-600', 'text-white');
+        
+        // Filter products
+        productCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Set initial active state
+    document.querySelector('.category-filter[data-category="all"]').classList.add('bg-primary-600', 'text-white');
+    
+    // Product detail modal
+    const modal = document.getElementById('product-modal');
+    const closeModalBtns = document.querySelectorAll('#close-modal, #close-modal-btn');
+    const detailButtons = document.querySelectorAll('.product-detail-btn');
+    
+    detailButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const productId = this.dataset.productId;
+        const product = products.find(p => p.id === productId);
+        
+        if (product) {
+          document.getElementById('modal-title').textContent = product.name;
+          document.getElementById('modal-image').src = product.image;
+          document.getElementById('modal-image').alt = product.name;
+          document.getElementById('modal-description').textContent = product.description;
+          
+          const featuresList = document.getElementById('modal-features');
+          featuresList.innerHTML = '';
+          product.features.forEach(feature => {
+            const li = document.createElement('li');
+            li.className = 'flex items-center';
+            li.innerHTML = `
+              <svg class="w-4 h-4 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              ${feature}
+            `;
+            featuresList.appendChild(li);
+          });
+          
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        }
+      });
+    });
+    
+    closeModalBtns.forEach(button => {
+      button.addEventListener('click', function() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      });
+    });
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
+  });
+</script>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

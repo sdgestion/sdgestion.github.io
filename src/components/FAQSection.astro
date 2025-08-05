@@ -1,0 +1,142 @@
+---
+// FAQ section component
+const faqs = [
+  {
+    id: 'faq-1',
+    question: '¿Qué es VERIFACTU y cuándo entra en vigor?',
+    answer: 'VERIFACTU es el nuevo sistema de verificación y control de software de facturación de la Agencia Tributaria. Entrará en vigor de forma gradual: enero 2025 para nuevos contribuyentes y julio 2025 para todos los demás. Requiere que todos los sistemas de facturación estén integrados directamente con Hacienda.'
+  },
+  {
+    id: 'faq-2',
+    question: '¿Mis equipos actuales son compatibles con VERIFACTU?',
+    answer: 'La compatibilidad depende de varios factores como la edad del equipo, el software instalado y las características técnicas. Ofrecemos un servicio gratuito de evaluación donde analizamos tu sistema actual y te informamos sobre las opciones disponibles: actualización de software, upgrade de hardware o sustitución completa.'
+  },
+  {
+    id: 'faq-3',
+    question: '¿Cuánto tiempo lleva la instalación de un nuevo sistema?',
+    answer: 'La instalación típica se completa en 24-48 horas. Esto incluye la configuración del hardware, instalación del software, migración de datos (si aplica), configuración de productos y formación básica del personal. Para instalaciones complejas o múltiples ubicaciones, el tiempo puede extenderse según las necesidades específicas.'
+  },
+  {
+    id: 'faq-4',
+    question: '¿Ofrecen formación para usar los equipos?',
+    answer: 'Sí, incluimos formación completa con cada instalación. La formación cubre el uso básico del sistema, gestión de productos, generación de informes, mantenimiento básico y resolución de problemas comunes. También proporcionamos manuales de usuario y acceso a soporte técnico continuo.'
+  },
+  {
+    id: 'faq-5',
+    question: '¿Qué garantía tienen los equipos?',
+    answer: 'Todos nuestros equipos incluyen garantía del fabricante que varía según el producto (generalmente 1-2 años). Además, ofrecemos extensiones de garantía y contratos de mantenimiento preventivo. El soporte técnico incluye asistencia telefónica, remota y, cuando sea necesario, visitas presenciales.'
+  },
+  {
+    id: 'faq-6',
+    question: '¿Pueden migrar los datos de mi sistema actual?',
+    answer: 'En la mayoría de casos, sí. Podemos migrar productos, clientes, proveedores y configuraciones básicas desde tu sistema actual. El proceso de migración se planifica cuidadosamente para minimizar interrupciones en tu negocio. También podemos realizar la migración fuera del horario comercial si es necesario.'
+  },
+  {
+    id: 'faq-7',
+    question: '¿Qué tipos de negocios son sus clientes principales?',
+    answer: 'Trabajamos con una amplia variedad de establecimientos: tiendas de alimentación, carnicerías, pescaderías, fruterías, restaurantes, bares, cafeterías, panaderías, farmacias, ferreterías y comercios en general. Adaptamos nuestras soluciones a las necesidades específicas de cada sector.'
+  },
+  {
+    id: 'faq-8',
+    question: '¿Los sistemas funcionan sin conexión a internet?',
+    answer: 'Nuestros sistemas pueden funcionar de forma autónoma sin conexión continua a internet para las operaciones diarias. Sin embargo, para cumplir con VERIFACTU, se requiere conexión periódica para sincronizar con Hacienda. Los sistemas almacenan la información localmente y se sincronizan automáticamente cuando hay conexión disponible.'
+  }
+];
+---
+
+<section id="faq" class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        Preguntas Frecuentes
+      </h2>
+      <p class="text-xl text-gray-600">
+        Resolvemos las dudas más comunes sobre nuestros productos y servicios
+      </p>
+    </div>
+    
+    <!-- FAQ Items -->
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="bg-gray-50 rounded-lg shadow-sm border border-gray-200">
+          <button 
+            class="faq-button w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-200 rounded-lg"
+            type="button"
+            data-target={`#${faq.id}`}
+            aria-expanded="false"
+          >
+            <span class="text-lg font-medium text-gray-900 pr-4">{faq.question}</span>
+            <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div 
+            id={faq.id}
+            class="faq-content hidden px-6 pb-5"
+          >
+            <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Contact CTA -->
+    <div class="mt-16 text-center bg-primary-50 rounded-lg p-8">
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">
+        ¿No encuentras la respuesta que buscas?
+      </h3>
+      <p class="text-gray-600 mb-6">
+        Nuestro equipo de expertos está aquí para ayudarte con cualquier consulta específica sobre tu negocio.
+      </p>
+      <a 
+        href="#contacto" 
+        class="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white rounded-md font-medium hover:bg-primary-700 transition-colors duration-200"
+      >
+        Contacta con nosotros
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqButtons = document.querySelectorAll('.faq-button');
+    
+    faqButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const content = document.querySelector(targetId);
+        const icon = this.querySelector('.faq-icon');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other FAQ items
+        faqButtons.forEach(otherButton => {
+          if (otherButton !== this) {
+            const otherTargetId = otherButton.getAttribute('data-target');
+            const otherContent = document.querySelector(otherTargetId);
+            const otherIcon = otherButton.querySelector('.faq-icon');
+            
+            otherButton.setAttribute('aria-expanded', 'false');
+            otherContent.classList.add('hidden');
+            (otherIcon as HTMLElement).style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current FAQ item
+        if (isExpanded) {
+          this.setAttribute('aria-expanded', 'false');
+          content.classList.add('hidden');
+          (icon as HTMLElement).style.transform = 'rotate(0deg)';
+        } else {
+          this.setAttribute('aria-expanded', 'true');
+          content.classList.remove('hidden');
+          (icon as HTMLElement).style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  });
+</script>

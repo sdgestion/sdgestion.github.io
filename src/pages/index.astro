@@ -1,0 +1,29 @@
+---
+// Main page
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ProductCarousel from '../components/ProductCarousel.astro';
+import AboutSection from '../components/AboutSection.astro';
+import VerifactuSection from '../components/VerifactuSection.astro';
+import FAQSection from '../components/FAQSection.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Sistemas de Gestión - TPV y Balanzas VERIFACTU para Comercio y Hostelería"
+  description="Expertos en soluciones de pesaje y TPV para comercio y hostelería. Sistemas certificados VERIFACTU con instalación, formación y soporte técnico incluido. ¡Consulta sin compromiso!"
+  keywords="sistemas TPV, balanzas comerciales, VERIFACTU, punto de venta, pesaje comercial, hostelería, comercio, Hacienda, facturación electrónica, España"
+>
+  <Header />
+  <main>
+    <Hero />
+    <ProductCarousel />
+    <AboutSection />
+    <VerifactuSection />
+    <FAQSection />
+    <ContactForm />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,122 @@
+---
+// Hero section component
+---
+
+<section id="inicio" class="relative bg-gradient-to-br from-primary-50 to-blue-100 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+      <!-- Content -->
+      <div class="mb-16 lg:mb-0">
+        <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          <span class="text-primary-600">Sistemas de Gestión</span><br>
+          para tu negocio
+        </h1>
+        <p class="mt-6 text-xl text-gray-600 leading-relaxed">
+          Expertos en soluciones de pesaje y TPV para comercio y hostelería. 
+          Ofrecemos equipos de última generación adaptados a la nueva normativa 
+          <strong class="text-primary-600">VERIFACTU</strong> de Hacienda.
+        </p>
+        
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="#productos" 
+             class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors duration-200">
+            Ver Productos
+            <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a href="#contacto" 
+             class="inline-flex items-center justify-center px-8 py-3 border border-primary-600 text-base font-medium rounded-md text-primary-600 bg-white hover:bg-primary-50 transition-colors duration-200">
+            Solicitar Presupuesto
+          </a>
+        </div>
+        
+        <!-- Features -->
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm font-medium text-gray-900">VERIFACTU</p>
+              <p class="text-sm text-gray-500">Certificado</p>
+            </div>
+          </div>
+          
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm font-medium text-gray-900">Instalación</p>
+              <p class="text-sm text-gray-500">Rápida</p>
+            </div>
+          </div>
+          
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm font-medium text-gray-900">Soporte</p>
+              <p class="text-sm text-gray-500">24/7</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Image -->
+      <div class="relative">
+        <div class="aspect-w-16 aspect-h-10 lg:aspect-w-1 lg:aspect-h-1">
+          <img 
+            src="/images/tpv1.png" 
+            alt="Sistema TPV profesional" 
+            class="object-cover rounded-lg shadow-2xl"
+            loading="eager"
+          />
+        </div>
+        <!-- Floating cards -->
+        <div class="absolute -top-4 -left-4 bg-white rounded-lg shadow-lg p-4 hidden lg:block">
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div class="ml-2">
+              <p class="text-sm font-medium">Cumple VERIFACTU</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="absolute -bottom-4 -right-4 bg-white rounded-lg shadow-lg p-4 hidden lg:block">
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div class="ml-2">
+              <p class="text-sm font-medium">Fácil de usar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Background decoration -->
+  <div class="absolute top-0 inset-x-0 h-64 bg-gradient-to-br from-primary-50 to-blue-100 opacity-60"></div>
+</section>
