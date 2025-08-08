@@ -146,7 +146,7 @@ const products = [
           </ul>
           
           <div class="flex space-x-4">
-            <a href="#contacto" class="flex-1 bg-primary-600 text-white text-center py-3 px-6 rounded-md hover:bg-primary-700 transition-colors duration-200">
+            <a href="#contacto" id="solicitar-info-btn" class="flex-1 bg-primary-600 text-white text-center py-3 px-6 rounded-md hover:bg-primary-700 transition-colors duration-200">
               Solicitar Información
             </a>
             <button id="close-modal-btn" class="flex-1 border border-gray-300 text-gray-700 py-3 px-6 rounded-md hover:bg-gray-50 transition-colors duration-200">
@@ -228,6 +228,13 @@ const products = [
         modal.classList.add('hidden');
         modal.classList.remove('flex');
       });
+    });
+    
+    // Close modal when clicking "Solicitar Información"
+    const solicitarInfoBtn = document.getElementById('solicitar-info-btn');
+    solicitarInfoBtn?.addEventListener('click', function() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
     });
     
     // Close modal when clicking outside
