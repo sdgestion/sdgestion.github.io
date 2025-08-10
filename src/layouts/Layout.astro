@@ -5,7 +5,7 @@ export interface Props {
   keywords?: string;
 }
 
-const { title, description = "Sistemas de Gestión - Expertos en soluciones de pesaje y TPV para comercio y hostelería. Soluciones adaptadas a VERIFACTU.", keywords = "sistemas gestión, TPV, pesaje, comercio, hostelería, VERIFACTU, balanzas, cajas registradoras" } = Astro.props;
+const { title, description = "Sistemas de Gestión Palencia - Expertos en pesaje y TPV VERIFACTU. Venta e instalación de balanzas comerciales y sistemas de gestión para comercios en Palencia y provincia.", keywords = "sistemas pesaje palencia, balanzas comerciales palencia, tpv verifactu palencia, venta balanzas palencia, empresa pesaje palencia, sistemas gestion palencia" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -34,6 +34,38 @@ const { title, description = "Sistemas de Gestión - Expertos en soluciones de p
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Sistemas de Gestión",
+      "image": "https://sdgestion.github.io/images/sdg_logo.png",
+      "description": "Empresa TPV en Palencia especializada en venta e instalación de TPV VERIFACTU para comercios y hostelería",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Paseo Ntra. Sra. de los Angeles, 6, Bajo",
+        "addressLocality": "Palencia",
+        "postalCode": "34001",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "42.0096",
+        "longitude": "-4.5285"
+      },
+      "telephone": "+34640262617",
+      "email": "jbueno@sdgestion.es",
+      "url": "https://sdgestion.github.io",
+      "priceRange": "€€",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "serviceArea": {
+        "@type": "State",
+        "name": "Castilla y León"
+      }
+    }
+    </script>
     
     <title>{title}</title>
   </head>
