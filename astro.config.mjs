@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://sdgestion.github.io',
+  site: 'https://www.sdgestion.es',
   integrations: [
     tailwind(),
     sitemap()
