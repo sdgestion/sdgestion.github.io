@@ -100,39 +100,90 @@
         </div>
       </div>
       
-      <!-- Image - Hidden on mobile, smaller on desktop -->
+      <!-- Image - Hidden on mobile, enhanced design -->
       <div class="relative hidden lg:block">
-        <div class="w-80 h-60 mx-auto">
-          <img 
-            src="/images/tpv3.png" 
-            alt="Sistema TPV profesional" 
-            class="w-full h-full object-cover rounded-lg shadow-2xl"
-            loading="eager"
-          />
-        </div>
-        <!-- Floating cards -->
-        <div class="absolute -top-3 -left-3 bg-white rounded-lg shadow-lg p-3">
-          <div class="flex items-center">
-            <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-              <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+        <!-- Animated background elements -->
+        <div class="absolute -top-4 -right-4 w-20 h-20 bg-primary-200/30 rounded-full blur-xl animate-pulse"></div>
+        <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-200/40 rounded-full blur-lg animate-pulse delay-1000"></div>
+        
+        <!-- Main product showcase -->
+        <div class="relative bg-gradient-to-br from-white via-blue-50/50 to-primary-50 rounded-3xl p-8 shadow-2xl border border-white/20">
+          <!-- Header with premium badge -->
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <h3 class="text-xl font-bold text-gray-800 mb-1">Sistema TPV Premium</h3>
+              <p class="text-sm text-gray-600">Tecnología de última generación</p>
             </div>
-            <div class="ml-2">
-              <p class="text-xs font-medium">Cumple VERIFACTU</p>
+            <div class="bg-gradient-to-r from-primary-500 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+              NUEVO
             </div>
           </div>
-        </div>
-        
-        <div class="absolute -bottom-3 -right-3 bg-white rounded-lg shadow-lg p-3">
-          <div class="flex items-center">
-            <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
-              <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
+          
+          <!-- Product image with floating elements -->
+          <div class="relative mb-6">
+            <div class="w-80 h-52 mx-auto relative">
+              <!-- Image glow effect -->
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-blue-400/20 rounded-xl blur-sm"></div>
+              <img 
+                src="/images/tpv3.png" 
+                alt="Sistema TPV profesional" 
+                class="relative w-full h-full object-cover rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300"
+                loading="eager"
+              />
+              
+              <!-- Floating info cards -->
+              <div class="absolute -top-3 -right-3 bg-white rounded-lg shadow-lg p-2 transform rotate-6 hover:rotate-12 transition-transform">
+                <div class="flex items-center">
+                  <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-2">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-xs font-bold text-green-700">VERIFACTU</span>
+                </div>
+              </div>
+              
+              <div class="absolute -bottom-3 -left-3 bg-white rounded-lg shadow-lg p-2 transform -rotate-6 hover:-rotate-12 transition-transform">
+                <div class="flex items-center">
+                  <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-2">
+                    <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                  </div>
+                  <span class="text-xs font-bold text-blue-700">Rápido</span>
+                </div>
+              </div>
             </div>
-            <div class="ml-2">
-              <p class="text-xs font-medium">Fácil de usar</p>
+          </div>
+          
+          <!-- Enhanced features grid -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-white/60 backdrop-blur-sm rounded-lg p-3 border border-white/30">
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center mr-3">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-gray-800">Certificado</p>
+                  <p class="text-xs text-gray-600">100% Legal</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white/60 backdrop-blur-sm rounded-lg p-3 border border-white/30">
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mr-3">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-gray-800">Premium</p>
+                  <p class="text-xs text-gray-600">Calidad top</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
