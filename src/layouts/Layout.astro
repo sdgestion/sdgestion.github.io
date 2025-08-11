@@ -15,10 +15,22 @@ const { title, description = "Sistemas de Gestión Palencia - Expertos en pesaje
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <!-- Favicon (ICO multipágina con 16 y 32) -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" sizes="any">
+
+    <!-- PNGs “clásicos” -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">
+
+    <!-- SVG (solo Safari 15+/Chrome/Firefox modernos) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+
+    <!-- iOS / iPadOS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+    <meta name="apple-mobile-web-app-title" content="SDGestion">
+
+    <!-- Web App Manifest (opcional para PWA) -->
+    <link rel="manifest" href="/site.webmanifest?v=3">
     <link rel="canonical" href={`https://www.sdgestion.es${Astro.url.pathname}`} />
     <meta name="generator" content={Astro.generator} />
     
