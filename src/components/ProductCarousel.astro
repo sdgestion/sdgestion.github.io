@@ -2,43 +2,35 @@
 // Product Carousel component
 const products = [
   {
-    id: 'tpv1',
-    name: 'Sistema TPV Profesional',
-    image: '/images/tpv1.png',
-    description: 'Terminal punto de venta completo con software integrado, perfecto para comercios y hostelería.',
-    features: ['Pantalla táctil HD', 'Software VERIFACTU incluido', 'Conectividad múltiple', 'Cajón portamonedas integrado'],
-    category: 'TPV'
-  },
-  {
     id: 'balanza1',
-    name: 'Balanza Comercial Básica',
+    name: 'Balanza PC CS‑2155 torre 2"',
     image: '/images/balanza1.png',
-    description: 'Balanza robusta y fiable para comercios que requieren pesaje preciso y duradero.',
-    features: ['Alta precisión', 'Display LED claro', 'Estructura resistente', 'Fácil calibración'],
+    description: 'Balanza PC en torre con impresora de 2" y pantallas táctiles para vendedor y cliente.',
+    features: ['Impresora de etiquetas/tickets de 2".', 'Pantalla de comprador válida como soporte publicitario dinámico.', 'Manejo intuitivo y configurable para el vendedor.', 'Arquitectura PC de altas prestaciones con doble TFT a color.'],
     category: 'Balanzas'
   },
   {
     id: 'balanza2',
-    name: 'Balanza Digital Avanzada',
+    name: 'Balanza PC CS‑2255 colgante inox 2"',
     image: '/images/balanza2.png',
-    description: 'Balanza digital con características avanzadas para comercios exigentes.',
-    features: ['Pesaje de alta precisión', 'Múltiples unidades', 'Conexión a PC', 'Batería de larga duración'],
+    description: 'Balanza PC colgante inox con impresora de 2" y pantallas táctiles para vendedor y cliente.',
+    features: ['Impresora de etiquetas/tickets de 2".', 'Diseño moderno, compacto y fácil de limpiar.', 'Arquitectura PC de altas prestaciones con doble TFT a color.', 'Manejo intuitivo y configurable para el vendedor.', 'Pantalla de comprador válida como soporte publicitario dinámico.'],
     category: 'Balanzas'
   },
   {
     id: 'balanza3',
-    name: 'Balanza Industrial',
+    name: 'Balanza PC CS‑2255 doble cuerpo linerless 2"',
     image: '/images/balanza3.png',
-    description: 'Solución industrial para grandes volúmenes y aplicaciones comerciales intensivas.',
-    features: ['Capacidad industrial', 'Certificación metrológica', 'Conectividad avanzada', 'Software especializado'],
+    description: 'Balanzas PC de doble cuerpo con impresora linerless de 2" y pantallas táctiles para vendedor y cliente.',
+    features: ['Diseño funcional: Moderno, compacto y fácil de limpiar.', 'Impresión versátil: Etiquetas y tickets linerless de 2" con autocorte.', 'Arquitectura PC: Alto rendimiento con doble pantalla TFT a color.', 'Publicidad dinámica: Pantalla de cliente apta para promociones visuales.', 'Normativa actual: Cumple con el reglamento UE 1169/2011.'],
     category: 'Balanzas'
   },
   {
     id: 'cajon1',
     name: 'Cajón Portamonedas',
     image: '/images/cajon1.png',
-    description: 'Cajón portamonedas seguro y duradero, compatible con todos nuestros sistemas TPV.',
-    features: ['Apertura automática', '5 compartimentos monedas', '4 compartimentos billetes', 'Cerradura de seguridad'],
+    description: 'Cajón de cobro automático Compact para gestionar pagos en efectivo de forma rápida y segura.',
+    features: ['Diseño compacto', 'Gestión total', 'Alta velocidad', 'Modo autopago', 'Gran capacidad', 'Seguro'],
     category: 'Accesorios'
   }
 ];
@@ -79,11 +71,11 @@ const products = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
       {products.map((product) => (
         <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-category={product.category}>
-          <div class="aspect-w-16 aspect-h-12 bg-gray-100">
+          <div class="flex items-center justify-center bg-gray-100 h-64">
             <img 
               src={product.image} 
               alt={product.name}
-              class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+              class="max-h-full max-w-full object-contain transition-transform duration-300"
               loading="lazy"
             />
           </div>
